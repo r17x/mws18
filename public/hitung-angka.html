@@ -93,22 +93,49 @@
             </div>
         </section>
     <script>
+        /* valueA {element}
+         * <input class="input" id="valueA" type="number" placeholder="A" /> 
+         */
         const valueA = document.getElementById('valueA');        
+        
+        /* valueB {element}
+         * <input class="input" id="valueB" type="number" placeholder="B" /> 
+         */
         const valueB = document.getElementById('valueB');
+        
+        /*
+         * result {element}
+         * <div class="card" id="result"> ... </div>
+         */
         const result = document.getElementById('result');
 
+        /*
+         * arrow function calculation 
+         * @param {mix} a
+         * @param {mix} b
+         * @return {integer} a + b
+         */
         const calculation = (a,b) => {
             return parseInt(a.value) + parseInt(b.value) || 0; 
         }
-
-        valueA.addEventListener('change', ({target}) => {
-            result.innerHTML = calculation(valueA, valueB);
-            
+        
+        /*
+         * element valueA set event listener
+         * the listener change innerHTML of element result
+         */
+        valueA.addEventListener('change', () => {
+            result.innerHTML = calculation(valueA, valueB); 
         });
 
-        valueB.addEventListener('change', ({target}) => {
+        
+        /*
+         * element valueB set event listener
+         * the listener change innerHTML of element result
+         */
+        valueB.addEventListener('change', () => {
             result.innerHTML = calculation(valueA, valueB);
         });
+        
     </script>
     </body>
 </html>
