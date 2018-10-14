@@ -121,21 +121,24 @@
         }
         
         /*
+         * change element result by calculation
+         */
+        const changeResult = () => {
+            result.innerHTML = calculation(valueA, valueB);
+        }
+        
+        /*
          * element valueA set event listener
          * the listener change innerHTML of element result
          */
-        valueA.addEventListener('change', () => {
-            result.innerHTML = calculation(valueA, valueB); 
-        });
+        valueA.addEventListener('change', changeResult());
 
         
         /*
          * element valueB set event listener
          * the listener change innerHTML of element result
          */
-        valueB.addEventListener('change', () => {
-            result.innerHTML = calculation(valueA, valueB);
-        });
+        valueB.addEventListener('change', changeResult());
         
     </script>
     </body>
