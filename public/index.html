@@ -72,13 +72,13 @@
         </header>
         <section id="content">
             <div class="card" id="project1">
-                Hitung Angka
+                Addition 
             </div>
             <div class="card" id="project2">
-                Project 2
+                Grid Layout
             </div>
             <div class="card" id="project3">
-                Project 3
+                Map Box
             </div>
         </section>
     </body>
@@ -87,7 +87,13 @@
         const redirectTo = to => {
             window.location = `${window.location.origin}/${to}`;
         }
+        
         const hitungAngka = document.getElementById('project1');
+        const gridLayout = document.getElementById('project2');
+        const mapBox = document.getElementById('project3');
+        
         hitungAngka.addEventListener('click', () => redirectTo('hitung-angka.html'));
+        gridLayout.addEventListener('click', () => redirectTo('grid.html'));
+        mapBox.addEventListener('click', () => redirectTo('map.html'));
     </script>
 </html>
