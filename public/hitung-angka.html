@@ -59,7 +59,7 @@
          * @return {integer} parseInt(a) + parseInt(b) or 0
          */
         const calculation = (a,b) => {
-            return parseInt(a.value) + parseInt(b.value) || 0; 
+            return parseInt(a.value || 0) + parseInt(b.value || 0); 
         }
         
         /*
@@ -73,14 +73,14 @@
          * element valueA set event listener
          * the listener change innerHTML of element result
          */
-        valueA.addEventListener('change', changeResult());
+        valueA.addEventListener('change', () => changeResult());
 
         
         /*
          * element valueB set event listener
          * the listener change innerHTML of element result
          */
-        valueB.addEventListener('change', changeResult());
+        valueB.addEventListener('change', () => changeResult());
         
     </script>
     </body>
