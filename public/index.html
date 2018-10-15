@@ -5,71 +5,13 @@
         <meta name="viewport" content="width=device-width" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>MWS 2018 - R AdySurya A</title>
-        <link href="https://fonts.googleapis.com/css?family=Chakra+Petch" rel="stylesheet" async>
-        <style>
-        body {
-            margin: 0;
-            background: #233;
-        }
-
-        a {
-            all: none; 
-        }
-        header {
-            display: flex;
-            height: 68px;
-            width: 100%;
-            background: #191f23;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        header > h1 {
-            color: white; 
-            font-family: 'Chakra Petch', sans-serif;
-            margin: 0px 0px;
-        }
-
-        #author {
-            color: #c63c4c; 
-            letter-spacing: 3px;
-        }
-
-        section#content {
-            background: #f47;
-            min-height: 500px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .card {
-            min-height: 68px;
-            display: flex;
-            width: 50%;
-            border: #233 6px solid;
-            padding: 2px 2px;
-            margin: 2px 3px;
-            justify-content: center;
-            align-items: center;
-            font-size: xx-large;
-            color: #233;
-            border-radius: 5px;
-        }
-
-        .card:hover{
-            cursor: pointer;
-            border-color: white;
-            color: white;
-        }
-        </style>
+        <link href="main.css" rel="preload" as="style"/>
+        <link href="main.js" rel="preload" as="script"/>
+        <link href="main.css" rel="stylesheet" async/>
+        <link href="https://fonts.gstatic.com/" rel="dns-prefetch"/>
+        <link href="https://fonts.googleapis.com/" rel="dns-prefetch"/>
     </head>
     <body>
-        <header>
-            <h1> MWS 2018 </h1>
-            <span id="author"> R AdySurya A</span>
-        </header>
         <section id="content">
             <div class="card" id="project1">
                 Addition 
@@ -83,10 +25,9 @@
         </section>
     </body>
 
+    <script src="main.js"></script>
+
     <script>
-        const redirectTo = to => {
-            window.location = `${window.location.origin}/${to}`;
-        }
         
         const hitungAngka = document.getElementById('project1');
         const gridLayout = document.getElementById('project2');
