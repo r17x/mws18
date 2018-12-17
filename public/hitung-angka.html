@@ -61,26 +61,53 @@
         const calculation = (a,b) => {
             return parseInt(a.value || 0) + parseInt(b.value || 0); 
         }
-        
-        /*
-         * change element result by calculation
-         */
-        const changeResult = () => {
-            result.innerHTML = calculation(valueA, valueB);
-        }
-        
-        /*
-         * element valueA set event listener
-         * the listener change innerHTML of element result
-         */
-        valueA.addEventListener('change', () => changeResult());
+       
+        /** if WebWorkerAPI on window **/
+        if(window.Worker){
+            /**
+             * @file {javascipt} woker.js
+             * public/worker.js
+             */ 
+            const isWorker = new Worker('worker.js'); 
 
+            valueA.addEventListener('change', () => isWorker.postMessage({
+                x:  valueA.value,
+                y: valueB.value,
+            }));
+
+            valueB.addEventListener('change', () => isWorker.postMessage({
+                x:  valueA.value,
+                y: valueB.value,
+            }));
+
+                 
+            isWorker.addEventListener('message', ({data}) => {
+                console.log('Hasil Didapatkan :', data);
+                result.innerHTML = data;
+            });
+            
+        } else {
+            /*
+             * change element result by calculation
+             */
+            const changeResult = () => {
+                result.innerHTML = calculation(valueA, valueB);
+            }
+            
+            /*
+             * element valueA set event listener
+             * the listener change innerHTML of element result
+             */
+            valueA.addEventListener('change', () => changeResult());
+
+            
+            /*
+             * element valueB set event listener
+             * the listener change innerHTML of element result
+             */
+            valueB.addEventListener('change', () => changeResult());
         
-        /*
-         * element valueB set event listener
-         * the listener change innerHTML of element result
-         */
-        valueB.addEventListener('change', () => changeResult());
+        }
         
     </script>
     </body>
