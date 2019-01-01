@@ -8,4 +8,4 @@ cache: yarn
 install:
     - yarn global add firebase-tools
 after_success:
-    - firebase deploy --token $FIREBASE_TOKEN
+    - firebase deploy --token $FIREBASE_TOKEN  --project $FIREBASE_PROJECT
