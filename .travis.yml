@@ -1,0 +1,16 @@
+languange: node_js
+
+branches:
+    only:
+        - master
+
+node_js:
+    - '8'
+
+cache: yarn
+
+install:
+    - yarn add global firebase-tools
+
+after_success:
+    - firebase deploy — project $FIREBASE_PROJECT — token $FIREBASE_TOKEN.
