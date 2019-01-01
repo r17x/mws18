@@ -10,7 +10,7 @@ node_js:
 cache: yarn
 
 install:
-    - yarn add global firebase-tools
+    - yarn global add firebase-tools
 
 after_success:
     - firebase deploy — project $FIREBASE_PROJECT — token $FIREBASE_TOKEN.
