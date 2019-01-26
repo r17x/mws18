@@ -8,5 +8,5 @@ cache: yarn
 install:
     - yarn global add firebase-tools lighthouse-ci
 after_success:
-    - firebase deploy --token $FIREBASE_TOKEN  --project $FIREBASE_PROJECT
-    - lighthouse-ci --perf=95 https://$CNAME/
+    - firebase deploy --token $FIREBASE_TOKEN  --project $FIREBASE_PROJECT --non-interactive
+    - lighthouse-ci --perf=100 --pwa=100 https://$CNAME/
