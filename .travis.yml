@@ -6,6 +6,7 @@ node_js:
     - '8'
 cache: yarn
 install:
-    - yarn global add firebase-tools
+    - yarn global add firebase-tools lighthouse-ci
 after_success:
     - firebase deploy --token $FIREBASE_TOKEN  --project $FIREBASE_PROJECT
+    - lighthouse-ci --perf=95 https://$CNAME/
